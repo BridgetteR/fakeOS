@@ -1,0 +1,48 @@
+* {
+  margin: 0px;
+}
+
+body {
+  background-image: url("./images/Background/wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.taskbar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(53, 92, 80, 0.9);
+}
+.taskbar__start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 30px;
+  height: 20px;
+}
+.taskbar__start:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.taskbar__start:active {
+  background-color: rgba(128, 128, 128, 0.7);
+}
+.taskbar__file-explorer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 30px;
+  height: 20px;
+}
+.taskbar__file-explorer:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.taskbar__file-explorer:active {
+  background-color: rgba(128, 128, 128, 0.7);
+}
