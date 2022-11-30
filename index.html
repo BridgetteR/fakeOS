@@ -4,19 +4,69 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="styles.css" />
+        <script src="./scripts/time-date.js" defer></script>
+        <script src="./scripts/start-menu.js" defer></script>
         <title>Document</title>
     </head>
     <body>
         <main>
-            <nav class="taskbar">
-                <a class="taskbar__start" href="#start"
-                    ><img src="./images/Icons/winLogo.png" width="17"
-                /></a>
-                <a class="taskbar__file-explorer" href="#fileExplorer"
-                    ><img src="./images/Icons/explorer.png" width="25"
-                /></a>
-            </nav>
+            <div class="desk-container">
+                <div class="menu">
+                    <div class="menu__left-bar">
+                        <a class="left-bar__ico" href="#start"
+                            ><img src="./images/Icons/winLogo.png" width="17"
+                        /></a>
+                        <a class="left-bar__ico" href="#start"
+                            ><img src="./images/Icons/winLogo.png" width="17"
+                        /></a>
+                        <a class="left-bar__ico" href="#start"
+                            ><img src="./images/Icons/winLogo.png" width="17"
+                        /></a>
+                    </div>
+                    <div class="menu__right-bar">
+                        <a class="right-bar__ico" href="#start"
+                            ><img src="./images/Icons/winLogo.png" width="17"
+                        /></a>
+                        <a class="right-bar__ico" href="#start"
+                            ><img src="./images/Icons/winLogo.png" width="17"
+                        /></a>
+                        <a class="right-bar__ico" href="#start"
+                            ><img src="./images/Icons/winLogo.png" width="17"
+                        /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <nav class="taskbar">
+                    <a class="taskbar__start" href="#start"
+                        ><img src="./images/Icons/winLogo.png" width="17"
+                    /></a>
+                    <a class="taskbar__file-explorer" href="#fileExplorer"
+                        ><img src="./images/Icons/explorer.png" width="25"
+                    /></a>
+                </nav>
+            </div>
+            <div class="wrapper wrapper--right">
+                <div class="taskbar taskbar--right">
+                    <a class="taskbar__notifications" href="#notifications"
+                        ><img src="./images/Icons/notification.png" width="17"
+                    /></a>
+                    <a class="taskbar__time" href="#time">
+                        <p id="currentTime">hi</p>
+                        <p id="currentDate">hi</p>
+                    </a>
+                    <a class="taskbar__sound" href="#sound"
+                        ><img src="./images/Icons/speaker.png" width="15"
+                    /></a>
+                </div>
+            </div>
         </main>
     </body>
 </html>

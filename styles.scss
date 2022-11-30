@@ -1,5 +1,8 @@
+@use "./mixins/mixins.scss";
+
 * {
     margin: 0px;
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -8,47 +11,103 @@ body {
     background-repeat: no-repeat;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.desk-container {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.wrapper {
+    display: flex;
+    width: 100vw;
+    justify-content: flex-start;
+
+    &--right {
+        justify-content: flex-end;
+    }
+}
+
 .taskbar {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
     overflow: hidden;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 50%;
     background-color: rgba(53, 92, 80, 0.9);
 
+    &--right {
+        flex-direction: row-reverse;
+    }
+
     &__start {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        width: 30px;
-        height: 20px;
-
-        &:hover {
-            background-color: rgba(128, 128, 128, 0.5);
-        }
-
-        &:active {
-            background-color: rgba(128, 128, 128, 0.7);
-        }
+        @include mixins.taskbar-default();
     }
 
     &__file-explorer {
+        @include mixins.taskbar-default();
+    }
+
+    &__notifications {
+        @include mixins.taskbar-default();
+    }
+
+    &__sound {
+        @include mixins.taskbar-default();
+    }
+
+    &__time {
+        @include mixins.taskbar-default();
+        flex-direction: column;
+        text-decoration: none;
+        margin: 0;
+        color: white;
+        font-size: smaller;
+        width: auto;
+
+        & p {
+            padding: 1px;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    background-color: #1d2f3b;
+    width: 20%;
+
+    &__left-bar {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        width: 10%;
         padding: 10px;
-        width: 30px;
-        height: 20px;
+    }
 
-        &:hover {
-            background-color: rgba(128, 128, 128, 0.5);
-        }
+    &__right-bar {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        padding: 10px;
+    }
+}
 
-        &:active {
-            background-color: rgba(128, 128, 128, 0.7);
-        }
+.left-bar {
+    &__ico {
+        @include mixins.taskbar-default();
+    }
+}
+
+.right-bar {
+    &__ico {
+        @include mixins.taskbar-default();
     }
 }
