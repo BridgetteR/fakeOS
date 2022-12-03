@@ -13,11 +13,51 @@
         <link rel="stylesheet" href="styles.css" />
         <script src="./scripts/time-date.js" defer></script>
         <script src="./scripts/start-menu.js" defer></script>
+        <script src="./scripts/explorer.js" defer></script>
+        <script src="./scripts/recycle.js" defer></script>
+        <script src="./scripts/slides.js" defer></script>
         <title>Document</title>
     </head>
     <body>
         <main>
+            <div class="ico-wrap">
+                <!-- Desktop App Icons -->
+                <div class="desktop-ico">
+                    <div class="desktop-ico__recycle">
+                        <button class="recycle-trigger">
+                            <img
+                                src="./images/Icons/recycle.png"
+                                width="50"
+                                height="50"
+                            />
+                            <p>Recycle Bin</p>
+                        </button>
+                    </div>
+                    <div class="desktop-ico__explorer">
+                        <button class="explorer-trigger">
+                            <img
+                                src="./images/Icons/explorer.png"
+                                width="50"
+                                height="50"
+                            />
+                            <p>Explorer</p>
+                        </button>
+                    </div>
+                    <div class="desktop-ico__gallery">
+                        <button class="gallery-trigger">
+                            <img
+                                src="./images/Icons/pictures.png"
+                                width="60"
+                                height="60"
+                            />
+                            <p>Gallery</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="desk-container">
+                <!-- Windows Menu -->
                 <div class="menu">
                     <div class="menu__left-bar">
                         <button class="left-bar__ico">
@@ -74,6 +114,10 @@
                             <p class="right-bar__para">File Explorer</p>
                         </button>
                         <p class="menu__para">G</p>
+                        <button class="right-bar__ico" id="galleryMenu">
+                            <img src="./images/Icons/pictures.png" width="25" />
+                            <p class="right-bar__para">Gallery</p>
+                        </button>
                         <button class="right-bar__ico">
                             <img src="./images/Icons/gethelp.png" width="25" />
                             <p class="right-bar__para">Get Help</p>
@@ -107,8 +151,429 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- Applications -->
+                <!-- File Explorer -->
+                <div class="file-explorer">
+                    <div class="file-explorer__content">
+                        <!-- Top Bar -->
+                        <div class="content__top-bar">
+                            <span class="file-explorer__close">
+                                <img
+                                    src="./images/Icons/close.png"
+                                    width="20"
+                                />
+                            </span>
+                            <span class="file-explorer__max">
+                                <img
+                                    src="./images/Icons/maximize.png"
+                                    width="20"
+                                />
+                            </span>
+                            <span class="file-explorer__max">
+                                <img
+                                    src="./images/Icons/minimize.png"
+                                    width="20"
+                                />
+                            </span>
+                            <p>File Explorer</p>
+                        </div>
+                        <!-- File Ribbon -->
+                        <div class="file-explorer__ribbon">
+                            <button
+                                class="file-explorer__top-button file-explorer__top-button--blue"
+                            >
+                                File
+                            </button>
+                            <button class="file-explorer__top-button">
+                                Home
+                            </button>
+                            <button class="file-explorer__top-button">
+                                Share
+                            </button>
+                            <button class="file-explorer__top-button">
+                                View
+                            </button>
+                        </div>
+                        <!-- main content of file explorer -->
+                        <div class="file-explorer__main-wrap">
+                            <div class="file-explorer__left-bar">
+                                <span class="file-explorer__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/quick.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Quick Access</p>
+                                    </button>
+                                </span>
+                                <span class="file-explorer__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/desktop.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Desktop</p>
+                                    </button>
+                                </span>
+                                <span class="file-explorer__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/download.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Downloads</p>
+                                    </button>
+                                </span>
+                                <span class="file-explorer__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/document.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Documents</p>
+                                    </button>
+                                </span>
+                                <span class="file-explorer__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/pictures.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Pictures</p>
+                                    </button>
+                                </span>
+                                <span class="file-explorer__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/music.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Music</p>
+                                    </button>
+                                </span>
+                                <span class="file-explorer__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/videos.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Videos</p>
+                                    </button>
+                                </span>
+                                <span class="file-explorer__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/onedrive.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>OneDrive</p>
+                                    </button>
+                                </span>
+                                <span class="file-explorer__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/thispc.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>This PC</p>
+                                    </button>
+                                </span>
+                                <span class="file-explorer__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/quick.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Network</p>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- Right bar -->
+                            <div class="file-explorer__right-bar">
+                                <button>
+                                    <img
+                                        src="./images/Icons/folder.png"
+                                        width="70"
+                                        height="70"
+                                    />
+                                    <p>Desktop</p>
+                                </button>
+                                <button>
+                                    <img
+                                        src="./images/Icons/folder.png"
+                                        width="70"
+                                        height="70"
+                                    />
+                                    <p>Downloads</p>
+                                </button>
+                                <button>
+                                    <img
+                                        src="./images/Icons/folder.png"
+                                        width="70"
+                                        height="70"
+                                    />
+                                    <p>Documents</p>
+                                </button>
+                                <button>
+                                    <img
+                                        src="./images/Icons/folder.png"
+                                        width="70"
+                                        height="70"
+                                    />
+                                    <p>Pictures</p>
+                                </button>
+                                <button>
+                                    <img
+                                        src="./images/Icons/folder.png"
+                                        width="70"
+                                        height="70"
+                                    />
+                                    <p>Music</p>
+                                </button>
+                                <button>
+                                    <img
+                                        src="./images/Icons/folder.png"
+                                        width="70"
+                                        height="70"
+                                    />
+                                    <p>Videos</p>
+                                </button>
+                                <button>
+                                    <img
+                                        src="./images/Icons/onedrive.png"
+                                        width="70"
+                                        height="70"
+                                    />
+                                    <p>OneDrive</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- recycle bin -->
+                <div class="recycle-bin">
+                    <div class="recycle-bin__content">
+                        <!-- Top Bar -->
+                        <div class="content__top-bar">
+                            <span class="recycle-bin__close">
+                                <img
+                                    src="./images/Icons/close.png"
+                                    width="20"
+                                />
+                            </span>
+                            <span class="recycle-bin__max">
+                                <img
+                                    src="./images/Icons/maximize.png"
+                                    width="20"
+                                />
+                            </span>
+                            <span class="recycle-bin__max">
+                                <img
+                                    src="./images/Icons/minimize.png"
+                                    width="20"
+                                />
+                            </span>
+                            <p>Recycle Bin</p>
+                        </div>
+                        <!-- File Ribbon -->
+                        <div class="recycle-bin__ribbon">
+                            <button
+                                class="recycle-bin__top-button recycle-bin__top-button--blue"
+                            >
+                                File
+                            </button>
+                            <button class="recycle-bin__top-button">
+                                Home
+                            </button>
+                            <button class="recycle-bin__top-button">
+                                Share
+                            </button>
+                            <button class="recycle-bin__top-button">
+                                View
+                            </button>
+                        </div>
+                        <!-- main content of file explorer -->
+                        <div class="recycle-bin__main-wrap">
+                            <div class="recycle-bin__left-bar">
+                                <span class="recycle-bin__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/quick.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Quick Access</p>
+                                    </button>
+                                </span>
+                                <span class="recycle-bin__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/desktop.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Desktop</p>
+                                    </button>
+                                </span>
+                                <span class="recycle-bin__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/download.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Downloads</p>
+                                    </button>
+                                </span>
+                                <span class="recycle-bin__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/document.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Documents</p>
+                                    </button>
+                                </span>
+                                <span class="recycle-bin__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/pictures.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Pictures</p>
+                                    </button>
+                                </span>
+                                <span class="recycle-bin__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/music.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Music</p>
+                                    </button>
+                                </span>
+                                <span class="recycle-bin__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/videos.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Videos</p>
+                                    </button>
+                                </span>
+                                <span class="recycle-bin__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/onedrive.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>OneDrive</p>
+                                    </button>
+                                </span>
+                                <span class="recycle-bin__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/thispc.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>This PC</p>
+                                    </button>
+                                </span>
+                                <span class="recycle-bin__span">
+                                    <button>
+                                        <img
+                                            src="./images/Icons/quick.png"
+                                            width="20"
+                                            height="20"
+                                        />
+                                        <p>Network</p>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- Right bar -->
+                            <div class="recycle-bin__right-bar">
+                                <p>This folder is empty</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery -->
+                <div class="gallery-program">
+                    <div class="gallery-program__content">
+                        <!-- Top Bar -->
+                        <div class="content__top-bar">
+                            <span class="gallery-program__close">
+                                <img
+                                    src="./images/Icons/close.png"
+                                    width="20"
+                                />
+                            </span>
+                            <span class="gallery-program__max">
+                                <img
+                                    src="./images/Icons/maximize.png"
+                                    width="20"
+                                />
+                            </span>
+                            <span class="gallery-program__max">
+                                <img
+                                    src="./images/Icons/minimize.png"
+                                    width="20"
+                                />
+                            </span>
+                            <p>Gallery</p>
+                        </div>
+                        <!-- Main Carousel -->
+                        <div class="gallery-program__main-wrap">
+                            <div
+                                class="gallery-program__slides gallery-program__slides--1"
+                                style="display: block"
+                            >
+                                <div class="gallery-program__text">1 / 3</div>
+                                <img src="./images/Pictures/Wall1.jpg" />
+                            </div>
+
+                            <div
+                                class="gallery-program__slides gallery-program__slides--2"
+                                style="display: none"
+                            >
+                                <div class="gallery-program__text">2 / 3</div>
+                                <img src="./images/Pictures/Wall2.jpg" />
+                            </div>
+
+                            <div
+                                class="gallery-program__slides gallery-program__slides--3"
+                                style="display: none"
+                            >
+                                <div class="gallery-program__text">3 / 3</div>
+                                <img src="./images/Pictures/Wall3.jpg" />
+                            </div>
+                            <button class="prev">❮</button>
+                            <button class="next">❯</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
+        <!-- Task Bar -->
         <div class="wrapper">
             <nav class="taskbar">
                 <button class="taskbar__start" id="start">
@@ -116,6 +581,9 @@
                 </button>
                 <button class="taskbar__file-explorer" id="fileExplorer">
                     <img src="./images/Icons/explorer.png" width="25" />
+                </button>
+                <button class="taskbar__gallery" id="galleryIco">
+                    <img src="./images/Icons/pictures.png" width="27" />
                 </button>
             </nav>
         </div>

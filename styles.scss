@@ -27,8 +27,6 @@ main {
     display: flex;
     height: 100%;
     align-items: flex-end;
-
-    // justify-content: flex-end;
 }
 
 .wrapper {
@@ -49,6 +47,7 @@ main {
     bottom: 0;
     width: 50%;
     background-color: rgba(53, 92, 80, 0.9);
+    z-index: 1;
 
     &--right {
         flex-direction: row-reverse;
@@ -59,6 +58,10 @@ main {
     }
 
     &__file-explorer {
+        @include mixins.taskbar-default();
+    }
+
+    &__gallery {
         @include mixins.taskbar-default();
     }
 
@@ -87,6 +90,7 @@ main {
 
 .menu {
     display: none;
+    position: absolute;
     flex-direction: row;
     align-items: flex-end;
     background-color: #1d2f3b;
@@ -94,6 +98,7 @@ main {
     height: 70%;
     overflow: hidden;
     margin-bottom: 45px;
+    z-index: 2;
 
     &__para {
         color: white;
@@ -136,5 +141,87 @@ main {
 
     &__para {
         color: white;
+    }
+}
+
+.file-explorer {
+    @include mixins.window-header;
+    @include mixins.explorer-content;
+}
+
+.recycle-bin {
+    @include mixins.window-header;
+    @include mixins.explorer-content;
+}
+
+.gallery-program {
+    @include mixins.window-header;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        background-color: #fefefe;
+        margin: auto;
+        border: 1px solid #888;
+        width: 50%;
+    }
+
+    &__main-wrap {
+        height: 100%;
+        position: relative;
+        margin: auto;
+    }
+
+    &__slides {
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+}
+
+.next {
+    @include mixins.prev-next;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    @include mixins.prev-next;
+}
+
+.content {
+    &__top-bar {
+        z-index: 3;
+        background-color: white;
+
+        & p {
+            padding: 10px;
+        }
+    }
+}
+
+.ico-wrap {
+    z-index: 1;
+}
+
+.desktop-ico {
+    &__recycle {
+        @include mixins.ico-button;
+    }
+
+    &__explorer {
+        @include mixins.ico-button;
+    }
+
+    &__gallery {
+        @include mixins.ico-button;
     }
 }
